@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Kalp Hastalığı Tahmini</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        #baslik{
+            
+            color: white;
+            font-size: 1.2em;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    
+    <a  href="#" id="baslik"><h1><center>Kalp Hastalığı Tahmin Formu</center></h1></a>
+    <hr>
+
+        <div class="loader-container">
+
+            <div class="loader"></div>
+        </div>
+        <h1 id="a"></h1>
+        <div class="result" id="result-positive">
+            <h1>Bu kişide kalp hastalığı olma olasılığı yüksek.</h1>
+            <i class="fa fa-frown-o"></i>
+            <a href=""><button>Tekrar Deneyiniz.</button></a>
+        </div>
+
+        <div class="result" id="result-negative">
+            <h1>Bu kişide kalp hastalığı olma olasılığı düşük.</h1>
+            <i class="fa fa-smile-o"></i>
+            <a href=""><button>Tekrar Deneyiniz.</button></a>
+        </div>
+
+        <div class="msg">
+            <p>Lütfen girdiğiniz verileri kontrol edin.</p>
+        </div>
+        <div class="container">
+            <form>
+                <br>
+                <p>Yaş</p>
+                <!-- Age  -->
+                <input type="number" name="age" id="age" required> <br><br> 
+        
+        
+                <p>Cinsiyet</p>
+                <!-- sex  -->
+                <input type="radio" value="1" name="sex" id="male"> 
+                <label for="male">Erkek</label>
+                <input type="radio" value="0" name="sex" id="female">
+                <label for="female">Kadın</label>
+                <br><br> 
+        
+                <p>Göğüs Ağrısı Tipi (cp)</p>
+                <!-- cp: chest pain type -->
+                <input type="radio" id="typical-angina" name="cp" value="0">
+                <label for="typical-angina">Tipik Anjina</label>
+                <input type="radio" id="atypical-angina" name="cp" value="1">
+                <label for="atypical-angina">Atipik Anjina</label>
+                <input type="radio" id="non-anginal-pain" name="cp" value="2">
+                <label for="non-anginal-pain">Anginal Olmayan Ağrı</label>
+                <input type="radio" id="asymptomatic" name="cp" value="3">
+                <label for="asymptomatic">Asemptomatik</label>
+                <br><br>
+        
+                <p>Tansiyon (mm Hg)</p>
+                <!-- trestbps: resting blood pressure (in mm Hg on admission to the hospital) -->
+                <input type="text"  name="trestbps" id="trestbps" required> <br><br> 
+        
+                <p>Kolesterol (mg/dl)</p>
+                <!-- chol: serum cholestoral in mg/dl  -->
+                <input type="text" name="chol" id="chol" required> <br><br> 
+                
+        
+                <p>Açlık Kan Şekeri > 120 mg/dl</p>
+                <!-- fbs: (fasting blood sugar > 120 mg/dl) (1 = true; 0 = false) -->
+                <input type="radio" value="1" name="fbs" id="true">
+                <label for="true">Evet</label>
+                <input type="radio" value="0" name="fbs" id="false">
+                <label for="false">Hayır</label> <br><br>
+        
+        
+                <p>İstirahat Elektrokardiyografik Sonuçları</p>
+                <!-- restecg: resting electrocardiographic results -->
+                <input type="radio" value="0" name="restecg" id="normal" > 
+                <label for="normal">Normal</label>
+                <input type="radio" value="1" name="restecg" id="st">
+                <label for="st">ST-T dalgası anormalliğine sahip</label>
+                <input type="radio" value="2" name="restecg" id="sh">
+                <label for="sh">Olası veya kesin sol ventrikül hipertrofisini gösteren</label> <br><br>
+        
+                <p>Kalp Atış Hızı</p>
+                <!-- thalach: maximum heart rate achieved -->
+                <input type="number" name="thalach" id="thalach" required> <br><br> 
+        
+        
+                <p>Egzersize Bağlı Anjina</p>
+                <!-- exang: exercise induced angina (1 = yes; 0 = no) -->
+                <input type="radio" value="1" name="exang" id="yes"> 
+                <label for="yes">Evet</label>
+                <input type="radio" value="0" name="exang" id="no"> 
+                <label for="no">Hayır</label> <br><br>
+        
+                <p>Dinlenmeye göre egzersizle tetiklenen ST çökmesi</p>
+                <!-- oldpeak = ST depression induced by exercise relative to rest -->
+                <input type="text" name="oldpeak" id="oldpeak" required> <br><br>
+        
+        
+                <p>Doruk egzersiz ST segmentinin eğimi </p>
+                <!-- slope: the slope of the peak exercise ST segment -->
+                <input type="radio" value="0" name="slope" id="upsloping"> 
+                <label for="upsloping">Yukarı eğimli</label>
+                <input type="radio" value="1" name="slope" id="flat"> 
+                <label for="flat">Düz</label>
+                <input type="radio" value="2" name="slope" id="downsloping"> 
+                <label for="downsloping">Aşağı eğimli</label> <br><br>
+        
+        
+        
+                <p>Floroskopi ile renklendirilen ana damar sayısı (0-3) </p>
+                <!-- ca: number of major vessels (0-3) colored by flourosopy -->
+                <input type="number" name="ca" id="ca" required> <br><br> 
+        
+        
+        
+                <p>Hasar Oranı</p>
+                <!-- thal: 3 = normal; 6 = fixed defect; 7 = reversable defect -->
+                <input type="radio" value="1" name="thal" id="normal-thal"> 
+                <label for="normal-thal">Normal</label>
+                <input type="radio" value="2" name="thal" id="fixed-defect"> 
+                <label for="fixed-defect">Kalıcı Hasar</label>
+                <input type="radio" value="3" name="thal" id="reversable-defect"> 
+                <label for="reversable-defect">Geri Çevrilebilir Hasar</label>
+        
+                <br><br>
+        
+                <input id="submit" type="submit" value="Gönder">
+            </form>
+        
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

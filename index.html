@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalp Hastalığı Tahmini</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+    <style>
+        body{
+            background-image: url(./images/kalparkaplan.jfif);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+        }
+        .sayfa{
+            
+            width: auto;
+            margin: 50px auto;
+        }
+        
+        .orta{
+            background: rgba(58, 58, 58, 0.904);
+            float: right;
+            margin:90px 15px 15px 15px;
+            width: 600px;
+            height: 250px;
+        }
+        
+
+
+        .orta .info{
+            width: 100%;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        .orta .info h1{
+            text-align: center;
+            color: #0d51aa;
+        }
+        .orta .info p{
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        button{
+            padding: 10px 25px;
+            background-color: #070246;
+            cursor: pointer;
+            border: none;
+            color: #ffffff;
+            font-size: 20px;
+        }
+
+        .footer{
+            text-align: center;           
+        }
+        .footer a{
+            color: #1227e0d7;
+            text-decoration: none;
+        }
+        .footer-mob{
+            display: none;
+        }
+
+        @media(max-width: 676px){
+            .orta{
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            .orta .info{
+                width: 80%;
+                margin: auto;
+            }
+            .footer{
+                display: none;
+            
+            }
+            .footer-mob{
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 15%;
+            }
+        }
+
+    </style>
+
+
+    <div class="sayfa">
+        
+        <div class="orta">
+            <div class="info">
+                <h1>Kalp Hastalığı Tahmini</h1>
+                <hr>
+                <p>Kalp hastalığı riskinizi makine öğrenimi yöntemiyle hesaplayın.</p>
+                <br>
+                <a href="main.html"><button>Başla</button></a>
+            </div>
+            
+        </div>
+    </div>
+
+
+</body>
+</html>
